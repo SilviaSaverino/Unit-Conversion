@@ -21,19 +21,20 @@ function renderUnitSections() {
             unitDOM += `
         <div id="length" class="unit">
             <h2>${unitSection[i]}</h2>
-            <p> ${inputEl.value} Meter = ${inputEl.value * meterFeets} Feet</p>
+            <p> ${inputEl.value} Meter = ${inputEl.value * meterFeets.toFixed(2)} Feet</p>
+            <p> ${inputEl.value} Feet = ${inputEl.value / Math.round(meterFeets.toFixed(2))} Meter</p>
         </div>`
         } else if (unitSection[i] === unitSection[1]) {
             unitDOM += `
             <div id="length" class="unit">
                 <h2>${unitSection[i]}</h2>
-                <p> ${inputEl.value} Liters = ${inputEl.value * literGallons} Gallons</p>
+                <p> ${inputEl.value} Liters = ${inputEl.value * literGallons.toFixed(2)} Gallons</p>
             </div>`
         } else {
             unitDOM += `
             <div id="length" class="unit">
                 <h2>${unitSection[i]}</h2>
-                <p> ${inputEl.value} Kilograms = ${inputEl.value * kilogramPounds} Pounds</p>
+                <p> ${inputEl.value} Kilograms = ${inputEl.value * Math.round(kilogramPounds.toFixed(2))} Pounds</p>
             </div>`
         }
 
