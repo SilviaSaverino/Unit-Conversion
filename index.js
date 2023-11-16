@@ -7,9 +7,9 @@ const literGallons = 0.264
 const kilogramPounds = 2.204
 
 const unitSection = [
-    "Lenght (Meter to Feet)",
-    "Volume (Liters to Gallons)",
-    "Mass (Kilograms to Pounds)",
+    "Lenght (Meter/Feet)",
+    "Volume (Liters/Gallons)",
+    "Mass (Kilograms/Pounds)",
 ]
 
 function renderUnitSections() {
@@ -22,6 +22,7 @@ function renderUnitSections() {
         <div id="length" class="unit">
             <h2>${unitSection[i]}</h2>
             <p> ${inputEl.value} Meter = ${inputEl.value * meterFeets.toFixed(2)} Feet</p>
+            <hr>
             <p> ${inputEl.value} Feet = ${inputEl.value / Math.round(meterFeets.toFixed(2))} Meter</p>
         </div>`
         } else if (unitSection[i] === unitSection[1]) {
@@ -29,12 +30,18 @@ function renderUnitSections() {
             <div id="length" class="unit">
                 <h2>${unitSection[i]}</h2>
                 <p> ${inputEl.value} Liters = ${inputEl.value * literGallons.toFixed(2)} Gallons</p>
+                <hr>
+                <p> ${inputEl.value} Gallons = ${inputEl.value / Math.round(meterFeets.toFixed(2))} Liters</p>
+
             </div>`
         } else {
             unitDOM += `
             <div id="length" class="unit">
                 <h2>${unitSection[i]}</h2>
                 <p> ${inputEl.value} Kilograms = ${inputEl.value * Math.round(kilogramPounds.toFixed(2))} Pounds</p>
+                <hr>
+                <p> ${inputEl.value} Pounds = ${inputEl.value / Math.round(kilogramPounds.toFixed(2))} Kilograms</p>
+
             </div>`
         }
 
